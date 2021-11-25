@@ -1,5 +1,6 @@
 <script>
-	import { Button, Table, FormCheck } from 'sveltestrap'
+	import { Button, Table, FormCheck, Modal, TabContent, TabPane } from 'sveltestrap'
+	import Student from './Component/Student.svelte'
 
 	let datas = [
 		{
@@ -28,15 +29,14 @@
 		},
 	]
 
-	const openDialog = () => {
-		window.API.helloDialog()
-	}
+	let isOpen = false
+	const toggle = () => {isOpen = !isOpen}
 </script>
 
 <main>
 	<h1>Data Pembayaran SPP</h1>
 	<!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
-	<Button color="warning" on:click={openDialog}>Hello</Button>
+	<!-- <Button color="warning" on:click={toggle}>Hello</Button>
 
 	<Table>
 		<thead>
@@ -67,6 +67,25 @@
 			{/each}
 		</tbody>
 	</Table>
+
+	<Modal body {isOpen} {toggle} header="Hello World!">
+		<p>There's a song that we're singing. Come on</p>
+		<img
+		src="https://i.ytimg.com/vi/NUJIRujygvY/hqdefault.jpg"
+		alt="Come on Get Happy"
+		class="img-fluid"
+		/>
+	</Modal> -->
+
+	<TabContent>
+		<TabPane tabId="student" tab="Siswa" active>
+			<Student />
+		</TabPane>
+
+		<TabPane tabId="payment" tab="Pembayaran">
+			
+		</TabPane>
+	</TabContent>
 </main>
 
 <style>

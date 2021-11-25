@@ -1,12 +1,13 @@
 const students = []
 
-function addStudent({ name, nim }) {
-    students.push({ name: String(name), nim: String(nim) })
+function addStudent({ name, id }) {
+    students.push({ name: String(name), id: String(id) })
+    return true
 }
 
 function findStudent(find) {
     const regex = RegExp(find, 'i')
-    return students.filter(v => regex.test(v.name) || regex.test(v.nim))
+    return students.filter(v => regex.test(v.name) || regex.test(v.id))
 }
 
 module.exports = {
