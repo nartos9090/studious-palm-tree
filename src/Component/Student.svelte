@@ -1,5 +1,5 @@
 <script>
-    import { Table, Row, Col, Button, Modal, Form, FormGroup, Input, Label } from 'sveltestrap'
+    import { Table, Row, Col, Button, Modal, FormGroup, Input, Label } from 'sveltestrap'
 
     let students = window.API.student.find(),
         openModal = false,
@@ -10,8 +10,10 @@
         }
 
     const resetForm = () => {
-        form.name = null,
+        form.name = null
+        form.student_id = null
         form.id = null
+        isEditing = false
     }
 
     const toggleAddStudent = () => {
@@ -23,10 +25,25 @@
     }
 
     const saveStudent = () => {
-        if (window.API.student.add(form)) {
+        let status
+        if (form.id) {
+            status = window.API.student.edit(form)
+        } else {
+            status = window.API.student.add(form)
+        }
+
+        if (status) {
             students = window.API.student.find()
             toggleAddStudent()
         }
+    }
+
+    const editStudent = (data) => {
+        form.name = data.name
+        form.student_id = data.student_id
+        form.id = data.id
+        isEditing = true
+        toggleAddStudent()
     }
 </script>
 
@@ -43,14 +60,18 @@
                 <tr>
                     <th>NIS</th>
                     <th>Nama</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
     
             <tbody>
                 {#each students as data, i}
                     <tr>
-                        <td>{data.id}</td>
+                        <td>{data.student_id}</td>
                         <td>{data.name}</td>
+                        <td>
+                            <Button on:click={editStudent(data)} color="warning">Edit</Button>
+                        </td>
                     </tr>
                 {/each}
             </tbody>
@@ -75,13 +96,13 @@
             <Input
                 id="input-id"
                 type="number"
-                invalid={!form.id}
-                bind:value={form.id}
+                invalid={!form.student_id}
+                bind:value={form.student_id}
                 feedback="Masukkan Nomor Induk Siswa"
                 placeholder="Nomor Induk Siswa"
             />
         </FormGroup>
 
-        <Button color="primary" disabled={!form.id || !form.name} on:click={saveStudent}>Simpan</Button>
+        <Button color="primary" disabled={!form.student_id || !form.name} on:click={saveStudent}>Simpan</Button>
     </Modal>
 </main>
