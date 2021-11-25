@@ -45,6 +45,12 @@
         isEditing = true
         toggleAddStudent()
     }
+
+    const deleteStudent = (id) => {
+        if (window.API.student.delete(id)) {
+            students = window.API.student.find()
+        }
+    }
 </script>
 
 <main>
@@ -71,6 +77,7 @@
                         <td>{data.name}</td>
                         <td>
                             <Button on:click={editStudent(data)} color="warning">Edit</Button>
+                            <Button on:click={deleteStudent(data.id)} color="danger">Hapus</Button>
                         </td>
                     </tr>
                 {/each}

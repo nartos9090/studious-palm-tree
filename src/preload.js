@@ -6,6 +6,7 @@ contextBridge.exposeInMainWorld('API', {
     student: {
         add: db_students.addStudent,
         edit: db_students.editStudent,
+        delete: db_students.deleteStudent,
         find: db_students.findStudent,
     }
 })

@@ -13673,13 +13673,13 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[10] = list[i];
-    	child_ctx[12] = i;
+    	child_ctx[11] = list[i];
+    	child_ctx[13] = i;
     	return child_ctx;
     }
 
-    // (53:12) <Button color="primary" on:click={toggleAddStudent}>
-    function create_default_slot_11(ctx) {
+    // (59:12) <Button color="primary" on:click={toggleAddStudent}>
+    function create_default_slot_12(ctx) {
     	let t;
 
     	const block = {
@@ -13696,24 +13696,24 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_11.name,
+    		id: create_default_slot_12.name,
     		type: "slot",
-    		source: "(53:12) <Button color=\\\"primary\\\" on:click={toggleAddStudent}>",
+    		source: "(59:12) <Button color=\\\"primary\\\" on:click={toggleAddStudent}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (52:8) <Col size="12">
-    function create_default_slot_10(ctx) {
+    // (58:8) <Col size="12">
+    function create_default_slot_11(ctx) {
     	let button;
     	let current;
 
     	button = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_11] },
+    				$$slots: { default: [create_default_slot_12] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -13732,7 +13732,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 16384) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -13754,24 +13754,24 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_10.name,
+    		id: create_default_slot_11.name,
     		type: "slot",
-    		source: "(52:8) <Col size=\\\"12\\\">",
+    		source: "(58:8) <Col size=\\\"12\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (51:4) <Row class="mt-3">
-    function create_default_slot_9(ctx) {
+    // (57:4) <Row class="mt-3">
+    function create_default_slot_10(ctx) {
     	let col;
     	let current;
 
     	col = new Col({
     			props: {
     				size: "12",
-    				$$slots: { default: [create_default_slot_10] },
+    				$$slots: { default: [create_default_slot_11] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -13788,7 +13788,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const col_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 16384) {
     				col_changes.$$scope = { dirty, ctx };
     			}
 
@@ -13810,17 +13810,17 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_9.name,
+    		id: create_default_slot_10.name,
     		type: "slot",
-    		source: "(51:4) <Row class=\\\"mt-3\\\">",
+    		source: "(57:4) <Row class=\\\"mt-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:28) <Button on:click={editStudent(data)} color="warning">
-    function create_default_slot_8(ctx) {
+    // (79:28) <Button on:click={editStudent(data)} color="warning">
+    function create_default_slot_9(ctx) {
     	let t;
 
     	const block = {
@@ -13837,42 +13837,84 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_8.name,
+    		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(73:28) <Button on:click={editStudent(data)} color=\\\"warning\\\">",
+    		source: "(79:28) <Button on:click={editStudent(data)} color=\\\"warning\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (68:16) {#each students as data, i}
+    // (80:28) <Button on:click={deleteStudent(data.id)} color="danger">
+    function create_default_slot_8(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Hapus");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_8.name,
+    		type: "slot",
+    		source: "(80:28) <Button on:click={deleteStudent(data.id)} color=\\\"danger\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (74:16) {#each students as data, i}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*data*/ ctx[10].student_id + "";
+    	let t0_value = /*data*/ ctx[11].student_id + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*data*/ ctx[10].name + "";
+    	let t2_value = /*data*/ ctx[11].name + "";
     	let t2;
     	let t3;
     	let td2;
-    	let button;
+    	let button0;
     	let t4;
+    	let button1;
+    	let t5;
     	let current;
 
-    	button = new Button({
+    	button0 = new Button({
     			props: {
     				color: "warning",
+    				$$slots: { default: [create_default_slot_9] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button0.$on("click", function () {
+    		if (is_function(/*editStudent*/ ctx[6](/*data*/ ctx[11]))) /*editStudent*/ ctx[6](/*data*/ ctx[11]).apply(this, arguments);
+    	});
+
+    	button1 = new Button({
+    			props: {
+    				color: "danger",
     				$$slots: { default: [create_default_slot_8] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", function () {
-    		if (is_function(/*editStudent*/ ctx[6](/*data*/ ctx[10]))) /*editStudent*/ ctx[6](/*data*/ ctx[10]).apply(this, arguments);
+    	button1.$on("click", function () {
+    		if (is_function(/*deleteStudent*/ ctx[7](/*data*/ ctx[11].id))) /*deleteStudent*/ ctx[7](/*data*/ ctx[11].id).apply(this, arguments);
     	});
 
     	const block = {
@@ -13885,12 +13927,14 @@ var app = (function () {
     			t2 = text(t2_value);
     			t3 = space();
     			td2 = element("td");
-    			create_component(button.$$.fragment);
+    			create_component(button0.$$.fragment);
     			t4 = space();
-    			add_location(td0, file$1, 69, 24, 1568);
-    			add_location(td1, file$1, 70, 24, 1619);
-    			add_location(td2, file$1, 71, 24, 1664);
-    			add_location(tr, file$1, 68, 20, 1539);
+    			create_component(button1.$$.fragment);
+    			t5 = space();
+    			add_location(td0, file$1, 75, 24, 1715);
+    			add_location(td1, file$1, 76, 24, 1766);
+    			add_location(td2, file$1, 77, 24, 1811);
+    			add_location(tr, file$1, 74, 20, 1686);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -13901,34 +13945,46 @@ var app = (function () {
     			append_dev(td1, t2);
     			append_dev(tr, t3);
     			append_dev(tr, td2);
-    			mount_component(button, td2, null);
-    			append_dev(tr, t4);
+    			mount_component(button0, td2, null);
+    			append_dev(td2, t4);
+    			mount_component(button1, td2, null);
+    			append_dev(tr, t5);
     			current = true;
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if ((!current || dirty & /*students*/ 1) && t0_value !== (t0_value = /*data*/ ctx[10].student_id + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*students*/ 1) && t2_value !== (t2_value = /*data*/ ctx[10].name + "")) set_data_dev(t2, t2_value);
-    			const button_changes = {};
+    			if ((!current || dirty & /*students*/ 1) && t0_value !== (t0_value = /*data*/ ctx[11].student_id + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*students*/ 1) && t2_value !== (t2_value = /*data*/ ctx[11].name + "")) set_data_dev(t2, t2_value);
+    			const button0_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
-    				button_changes.$$scope = { dirty, ctx };
+    			if (dirty & /*$$scope*/ 16384) {
+    				button0_changes.$$scope = { dirty, ctx };
     			}
 
-    			button.$set(button_changes);
+    			button0.$set(button0_changes);
+    			const button1_changes = {};
+
+    			if (dirty & /*$$scope*/ 16384) {
+    				button1_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button1.$set(button1_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(button.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(button.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
-    			destroy_component(button);
+    			destroy_component(button0);
+    			destroy_component(button1);
     		}
     	};
 
@@ -13936,14 +13992,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(68:16) {#each students as data, i}",
+    		source: "(74:16) {#each students as data, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (58:8) <Table>
+    // (64:8) <Table>
     function create_default_slot_7(ctx) {
     	let thead;
     	let tr;
@@ -13986,12 +14042,12 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$1, 60, 20, 1326);
-    			add_location(th1, file$1, 61, 20, 1359);
-    			add_location(th2, file$1, 62, 20, 1393);
-    			add_location(tr, file$1, 59, 16, 1301);
-    			add_location(thead, file$1, 58, 12, 1277);
-    			add_location(tbody, file$1, 66, 12, 1467);
+    			add_location(th0, file$1, 66, 20, 1473);
+    			add_location(th1, file$1, 67, 20, 1506);
+    			add_location(th2, file$1, 68, 20, 1540);
+    			add_location(tr, file$1, 65, 16, 1448);
+    			add_location(thead, file$1, 64, 12, 1424);
+    			add_location(tbody, file$1, 72, 12, 1614);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -14011,7 +14067,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*editStudent, students*/ 65) {
+    			if (dirty & /*deleteStudent, students, editStudent*/ 193) {
     				each_value = /*students*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -14069,14 +14125,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(58:8) <Table>",
+    		source: "(64:8) <Table>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (57:4) <Row>
+    // (63:4) <Row>
     function create_default_slot_6(ctx) {
     	let table;
     	let current;
@@ -14100,7 +14156,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const table_changes = {};
 
-    			if (dirty & /*$$scope, students*/ 8193) {
+    			if (dirty & /*$$scope, students*/ 16385) {
     				table_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14124,14 +14180,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(57:4) <Row>",
+    		source: "(63:4) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:12) <Label for="input-name">
+    // (90:12) <Label for="input-name">
     function create_default_slot_5(ctx) {
     	let t;
 
@@ -14151,14 +14207,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(83:12) <Label for=\\\"input-name\\\">",
+    		source: "(90:12) <Label for=\\\"input-name\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (82:8) <FormGroup>
+    // (89:8) <FormGroup>
     function create_default_slot_4(ctx) {
     	let label;
     	let t;
@@ -14176,7 +14232,7 @@ var app = (function () {
     		});
 
     	function input_value_binding(value) {
-    		/*input_value_binding*/ ctx[7](value);
+    		/*input_value_binding*/ ctx[8](value);
     	}
 
     	let input_props = {
@@ -14209,7 +14265,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 16384) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14247,14 +14303,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(82:8) <FormGroup>",
+    		source: "(89:8) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:12) <Label for="input-id">
+    // (102:12) <Label for="input-id">
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -14274,14 +14330,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(95:12) <Label for=\\\"input-id\\\">",
+    		source: "(102:12) <Label for=\\\"input-id\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:8) <FormGroup>
+    // (101:8) <FormGroup>
     function create_default_slot_2(ctx) {
     	let label;
     	let t;
@@ -14299,7 +14355,7 @@ var app = (function () {
     		});
 
     	function input_value_binding_1(value) {
-    		/*input_value_binding_1*/ ctx[8](value);
+    		/*input_value_binding_1*/ ctx[9](value);
     	}
 
     	let input_props = {
@@ -14332,7 +14388,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 16384) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14370,14 +14426,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(94:8) <FormGroup>",
+    		source: "(101:8) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (106:8) <Button color="primary" disabled={!form.student_id || !form.name} on:click={saveStudent}>
+    // (113:8) <Button color="primary" disabled={!form.student_id || !form.name} on:click={saveStudent}>
     function create_default_slot_1$1(ctx) {
     	let t;
 
@@ -14397,14 +14453,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(106:8) <Button color=\\\"primary\\\" disabled={!form.student_id || !form.name} on:click={saveStudent}>",
+    		source: "(113:8) <Button color=\\\"primary\\\" disabled={!form.student_id || !form.name} on:click={saveStudent}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:4) <Modal body isOpen={openModal} toggle={toggleAddStudent} header={isEditing ? "Edit Siswa" : "Tambah Siswa"}>
+    // (88:4) <Modal body isOpen={openModal} toggle={toggleAddStudent} header={isEditing ? "Edit Siswa" : "Tambah Siswa"}>
     function create_default_slot$1(ctx) {
     	let formgroup0;
     	let t0;
@@ -14460,14 +14516,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const formgroup0_changes = {};
 
-    			if (dirty & /*$$scope, form*/ 8200) {
+    			if (dirty & /*$$scope, form*/ 16392) {
     				formgroup0_changes.$$scope = { dirty, ctx };
     			}
 
     			formgroup0.$set(formgroup0_changes);
     			const formgroup1_changes = {};
 
-    			if (dirty & /*$$scope, form*/ 8200) {
+    			if (dirty & /*$$scope, form*/ 16392) {
     				formgroup1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14475,7 +14531,7 @@ var app = (function () {
     			const button_changes = {};
     			if (dirty & /*form*/ 8) button_changes.disabled = !/*form*/ ctx[3].student_id || !/*form*/ ctx[3].name;
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 16384) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14507,7 +14563,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(81:4) <Modal body isOpen={openModal} toggle={toggleAddStudent} header={isEditing ? \\\"Edit Siswa\\\" : \\\"Tambah Siswa\\\"}>",
+    		source: "(88:4) <Modal body isOpen={openModal} toggle={toggleAddStudent} header={isEditing ? \\\"Edit Siswa\\\" : \\\"Tambah Siswa\\\"}>",
     		ctx
     	});
 
@@ -14526,7 +14582,7 @@ var app = (function () {
     	row0 = new Row({
     			props: {
     				class: "mt-3",
-    				$$slots: { default: [create_default_slot_9] },
+    				$$slots: { default: [create_default_slot_10] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -14560,7 +14616,7 @@ var app = (function () {
     			create_component(row1.$$.fragment);
     			t1 = space();
     			create_component(modal.$$.fragment);
-    			add_location(main, file$1, 49, 0, 1072);
+    			add_location(main, file$1, 55, 0, 1219);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -14577,14 +14633,14 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const row0_changes = {};
 
-    			if (dirty & /*$$scope*/ 8192) {
+    			if (dirty & /*$$scope*/ 16384) {
     				row0_changes.$$scope = { dirty, ctx };
     			}
 
     			row0.$set(row0_changes);
     			const row1_changes = {};
 
-    			if (dirty & /*$$scope, students*/ 8193) {
+    			if (dirty & /*$$scope, students*/ 16385) {
     				row1_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14593,7 +14649,7 @@ var app = (function () {
     			if (dirty & /*openModal*/ 2) modal_changes.isOpen = /*openModal*/ ctx[1];
     			if (dirty & /*isEditing*/ 4) modal_changes.header = /*isEditing*/ ctx[2] ? "Edit Siswa" : "Tambah Siswa";
 
-    			if (dirty & /*$$scope, form*/ 8200) {
+    			if (dirty & /*$$scope, form*/ 16392) {
     				modal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -14678,6 +14734,12 @@ var app = (function () {
     		toggleAddStudent();
     	};
 
+    	const deleteStudent = id => {
+    		if (window.API.student.delete(id)) {
+    			$$invalidate(0, students = window.API.student.find());
+    		}
+    	};
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -14714,7 +14776,8 @@ var app = (function () {
     		resetForm,
     		toggleAddStudent,
     		saveStudent,
-    		editStudent
+    		editStudent,
+    		deleteStudent
     	});
 
     	$$self.$inject_state = $$props => {
@@ -14736,6 +14799,7 @@ var app = (function () {
     		toggleAddStudent,
     		saveStudent,
     		editStudent,
+    		deleteStudent,
     		input_value_binding,
     		input_value_binding_1
     	];
