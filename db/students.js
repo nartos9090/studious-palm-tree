@@ -22,8 +22,7 @@ function deleteStudent(id) {
     const index = students.findIndex(student => student.id == id)
     
     if (index >= 0) {
-        students.splice(index, 1)
-        return true
+        return Boolean(students.splice(index, 1).length)
     }
 
     return false
