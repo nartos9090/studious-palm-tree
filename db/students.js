@@ -33,9 +33,14 @@ function findStudent(find) {
     return students.filter(v => regex.test(v.name) || regex.test(v.student_id))
 }
 
+function findByStudentId(student_id) {
+    return students.find(v => v.student_id === student_id)
+}
+
 module.exports = {
     addStudent,
     editStudent,
     deleteStudent,
-    findStudent
+    findStudent,
+    findByStudentId,
 }
