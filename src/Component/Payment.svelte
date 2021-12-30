@@ -3,6 +3,7 @@
 
     let payments = []
     let student_lists = []
+    let isEditing = false
     let isOpen = false
     let openModal = false
     let form = {
@@ -58,6 +59,29 @@
         }
     }
 
+    const saveEdit = () => {
+        const { status, message } = window.API.payment.edit(form)
+
+        if (status) {
+            getPayment()
+            isEditing = false
+            toggleAddPayment()
+        } else {
+            alert(message)
+        }
+    }
+
+    const editPayment = (data) => {
+        isEditing = true
+        form.id = data.id
+        form.student_id = data.student_id
+        form.year = data.year
+        form.month = data.month
+        form.nominal = data.nominal
+        form.paid = data.paid
+        toggleAddPayment()
+    }
+
     getPayment()
 
 </script>
@@ -80,6 +104,7 @@
                         <th>Bulan</th>
                         <th>Nominal</th>
                         <th>Terbayar</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 
@@ -95,9 +120,11 @@
                                 <Input
                                     type="checkbox"
                                     bind:checked={form.paid}
-                                    disabled
-                                    
                                 />
+                            </td>
+                            <td>
+                                <Button on:click={editPayment(payment)} color="warning">Edit</Button>
+                                <!-- <Button on:click={deleteStudent(data.id)} color="danger">Hapus</Button> -->
                             </td>
                         </tr>
                     {/each}
@@ -150,10 +177,10 @@
                 feedback="Pilih tahun"
                 placeholder="Pilih tahun"
             >
-                <option>2018</option>
-                <option>2019</option>
-                <option>2020</option>
-                <option>2021</option>
+                <option value={2018}>2018</option>
+                <option value={2019}>2019</option>
+                <option value={2020}>2020</option>
+                <option value={2021}>2021</option>
             </Input>
         </FormGroup>
 
@@ -167,18 +194,18 @@
                 feedback="Pilih bulan"
                 placeholder="Pilih bulan"
             >
-                <option value="1">Januari</option>
-                <option value="2">Februari</option>
-                <option value="3">Maret</option>
-                <option value="4">April</option>
-                <option value="5">Mei</option>
-                <option value="6">Juni</option>
-                <option value="7">Juli</option>
-                <option value="8">Agustus</option>
-                <option value="9">September</option>
-                <option value="10">Oktober</option>
-                <option value="11">November</option>
-                <option value="12">Desember</option>
+                <option value={1}>Januari</option>
+                <option value={2}>Februari</option>
+                <option value={3}>Maret</option>
+                <option value={4}>April</option>
+                <option value={5}>Mei</option>
+                <option value={6}>Juni</option>
+                <option value={7}>Juli</option>
+                <option value={8}>Agustus</option>
+                <option value={9}>September</option>
+                <option value={10}>Oktober</option>
+                <option value={11}>November</option>
+                <option value={12}>Desember</option>
             </Input>
         </FormGroup>
 
@@ -203,6 +230,6 @@
             />
         </FormGroup>
 
-        <Button color="primary" disabled={!form.student_verified || !form.year || !form.month || !form.nominal} on:click={savePayment}>Simpan</Button>
+        <Button color="primary" disabled={!form.student_verified || !form.year || !form.month || !form.nominal} on:click={isEditing ? saveEdit : savePayment}>Simpan</Button>
     </Modal>
 </main>

@@ -13,5 +13,6 @@ contextBridge.exposeInMainWorld('API', {
     payment: {
         find: db_payments.findPayment,
         add: db_payments.addPayment,
+        edit: db_payments.editPayment,
     }
 })

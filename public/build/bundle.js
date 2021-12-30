@@ -19183,19 +19183,19 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[19] = list[i];
-    	child_ctx[21] = i;
+    	child_ctx[22] = list[i];
+    	child_ctx[24] = i;
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[22] = list[i];
+    	child_ctx[25] = list[i];
     	return child_ctx;
     }
 
-    // (68:12) <Button color="primary" on:click={toggleAddPayment}>
-    function create_default_slot_24(ctx) {
+    // (92:12) <Button color="primary" on:click={toggleAddPayment}>
+    function create_default_slot_25(ctx) {
     	let t;
 
     	const block = {
@@ -19212,30 +19212,30 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_24.name,
+    		id: create_default_slot_25.name,
     		type: "slot",
-    		source: "(68:12) <Button color=\\\"primary\\\" on:click={toggleAddPayment}>",
+    		source: "(92:12) <Button color=\\\"primary\\\" on:click={toggleAddPayment}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:8) <Col size="12">
-    function create_default_slot_23(ctx) {
+    // (91:8) <Col size="12">
+    function create_default_slot_24(ctx) {
     	let button;
     	let current;
 
     	button = new Button({
     			props: {
     				color: "primary",
-    				$$slots: { default: [create_default_slot_24] },
+    				$$slots: { default: [create_default_slot_25] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", /*toggleAddPayment*/ ctx[6]);
+    	button.$on("click", /*toggleAddPayment*/ ctx[7]);
 
     	const block = {
     		c: function create() {
@@ -19248,7 +19248,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const button_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19270,24 +19270,24 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_23.name,
+    		id: create_default_slot_24.name,
     		type: "slot",
-    		source: "(67:8) <Col size=\\\"12\\\">",
+    		source: "(91:8) <Col size=\\\"12\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (66:4) <Row class="mt-3">
-    function create_default_slot_22(ctx) {
+    // (90:4) <Row class="mt-3">
+    function create_default_slot_23(ctx) {
     	let col;
     	let current;
 
     	col = new Col({
     			props: {
     				size: "12",
-    				$$slots: { default: [create_default_slot_23] },
+    				$$slots: { default: [create_default_slot_24] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -19304,7 +19304,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const col_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				col_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19326,56 +19326,99 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_22.name,
+    		id: create_default_slot_23.name,
     		type: "slot",
-    		source: "(66:4) <Row class=\\\"mt-3\\\">",
+    		source: "(90:4) <Row class=\\\"mt-3\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (87:20) {#each payments as payment}
+    // (126:32) <Button on:click={editPayment(payment)} color="warning">
+    function create_default_slot_22(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Edit");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_22.name,
+    		type: "slot",
+    		source: "(126:32) <Button on:click={editPayment(payment)} color=\\\"warning\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (112:20) {#each payments as payment}
     function create_each_block_1(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*payment*/ ctx[22].student.name + "";
+    	let t0_value = /*payment*/ ctx[25].student.name + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*payment*/ ctx[22].student_id + "";
+    	let t2_value = /*payment*/ ctx[25].student_id + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*payment*/ ctx[22].year + "";
+    	let t4_value = /*payment*/ ctx[25].year + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*payment*/ ctx[22].month + "";
+    	let t6_value = /*payment*/ ctx[25].month + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*payment*/ ctx[22].nominal + "";
+    	let t8_value = /*payment*/ ctx[25].nominal + "";
     	let t8;
     	let t9;
     	let td5;
     	let input;
     	let updating_checked;
     	let t10;
+    	let td6;
+    	let button;
+    	let t11;
     	let current;
 
     	function input_checked_binding(value) {
-    		/*input_checked_binding*/ ctx[9](value);
+    		/*input_checked_binding*/ ctx[12](value);
     	}
 
-    	let input_props = { type: "checkbox", disabled: true };
+    	let input_props = { type: "checkbox" };
 
-    	if (/*form*/ ctx[4].paid !== void 0) {
-    		input_props.checked = /*form*/ ctx[4].paid;
+    	if (/*form*/ ctx[5].paid !== void 0) {
+    		input_props.checked = /*form*/ ctx[5].paid;
     	}
 
     	input = new Input({ props: input_props, $$inline: true });
     	binding_callbacks.push(() => bind(input, 'checked', input_checked_binding));
+
+    	button = new Button({
+    			props: {
+    				color: "warning",
+    				$$slots: { default: [create_default_slot_22] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", function () {
+    		if (is_function(/*editPayment*/ ctx[11](/*payment*/ ctx[25]))) /*editPayment*/ ctx[11](/*payment*/ ctx[25]).apply(this, arguments);
+    	});
 
     	const block = {
     		c: function create() {
@@ -19398,13 +19441,17 @@ var app = (function () {
     			td5 = element("td");
     			create_component(input.$$.fragment);
     			t10 = space();
-    			add_location(td0, file$1, 88, 28, 2140);
-    			add_location(td1, file$1, 89, 28, 2200);
-    			add_location(td2, file$1, 90, 28, 2258);
-    			add_location(td3, file$1, 91, 28, 2310);
-    			add_location(td4, file$1, 92, 28, 2363);
-    			add_location(td5, file$1, 93, 28, 2418);
-    			add_location(tr, file$1, 87, 24, 2107);
+    			td6 = element("td");
+    			create_component(button.$$.fragment);
+    			t11 = space();
+    			add_location(td0, file$1, 113, 28, 2760);
+    			add_location(td1, file$1, 114, 28, 2820);
+    			add_location(td2, file$1, 115, 28, 2878);
+    			add_location(td3, file$1, 116, 28, 2930);
+    			add_location(td4, file$1, 117, 28, 2983);
+    			add_location(td5, file$1, 118, 28, 3038);
+    			add_location(td6, file$1, 124, 28, 3292);
+    			add_location(tr, file$1, 112, 24, 2727);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -19426,36 +19473,50 @@ var app = (function () {
     			append_dev(tr, td5);
     			mount_component(input, td5, null);
     			append_dev(tr, t10);
+    			append_dev(tr, td6);
+    			mount_component(button, td6, null);
+    			append_dev(tr, t11);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
-    			if ((!current || dirty & /*payments*/ 1) && t0_value !== (t0_value = /*payment*/ ctx[22].student.name + "")) set_data_dev(t0, t0_value);
-    			if ((!current || dirty & /*payments*/ 1) && t2_value !== (t2_value = /*payment*/ ctx[22].student_id + "")) set_data_dev(t2, t2_value);
-    			if ((!current || dirty & /*payments*/ 1) && t4_value !== (t4_value = /*payment*/ ctx[22].year + "")) set_data_dev(t4, t4_value);
-    			if ((!current || dirty & /*payments*/ 1) && t6_value !== (t6_value = /*payment*/ ctx[22].month + "")) set_data_dev(t6, t6_value);
-    			if ((!current || dirty & /*payments*/ 1) && t8_value !== (t8_value = /*payment*/ ctx[22].nominal + "")) set_data_dev(t8, t8_value);
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if ((!current || dirty & /*payments*/ 1) && t0_value !== (t0_value = /*payment*/ ctx[25].student.name + "")) set_data_dev(t0, t0_value);
+    			if ((!current || dirty & /*payments*/ 1) && t2_value !== (t2_value = /*payment*/ ctx[25].student_id + "")) set_data_dev(t2, t2_value);
+    			if ((!current || dirty & /*payments*/ 1) && t4_value !== (t4_value = /*payment*/ ctx[25].year + "")) set_data_dev(t4, t4_value);
+    			if ((!current || dirty & /*payments*/ 1) && t6_value !== (t6_value = /*payment*/ ctx[25].month + "")) set_data_dev(t6, t6_value);
+    			if ((!current || dirty & /*payments*/ 1) && t8_value !== (t8_value = /*payment*/ ctx[25].nominal + "")) set_data_dev(t8, t8_value);
     			const input_changes = {};
 
-    			if (!updating_checked && dirty & /*form*/ 16) {
+    			if (!updating_checked && dirty & /*form*/ 32) {
     				updating_checked = true;
-    				input_changes.checked = /*form*/ ctx[4].paid;
+    				input_changes.checked = /*form*/ ctx[5].paid;
     				add_flush_callback(() => updating_checked = false);
     			}
 
     			input.$set(input_changes);
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 268435456) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
     			transition_in(input.$$.fragment, local);
+    			transition_in(button.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
     			transition_out(input.$$.fragment, local);
+    			transition_out(button.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
     			destroy_component(input);
+    			destroy_component(button);
     		}
     	};
 
@@ -19463,14 +19524,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(87:20) {#each payments as payment}",
+    		source: "(112:20) {#each payments as payment}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (74:12) <Table>
+    // (98:12) <Table>
     function create_default_slot_21(ctx) {
     	let thead;
     	let tr;
@@ -19486,6 +19547,8 @@ var app = (function () {
     	let t9;
     	let th5;
     	let t11;
+    	let th6;
+    	let t13;
     	let tbody;
     	let current;
     	let each_value_1 = /*payments*/ ctx[0];
@@ -19522,21 +19585,25 @@ var app = (function () {
     			th5 = element("th");
     			th5.textContent = "Terbayar";
     			t11 = space();
+    			th6 = element("th");
+    			th6.textContent = "Aksi";
+    			t13 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(th0, file$1, 76, 24, 1731);
-    			add_location(th1, file$1, 77, 24, 1769);
-    			add_location(th2, file$1, 78, 24, 1806);
-    			add_location(th3, file$1, 79, 24, 1845);
-    			add_location(th4, file$1, 80, 24, 1884);
-    			add_location(th5, file$1, 81, 24, 1925);
-    			add_location(tr, file$1, 75, 20, 1702);
-    			add_location(thead, file$1, 74, 16, 1674);
-    			add_location(tbody, file$1, 85, 16, 2027);
+    			add_location(th0, file$1, 100, 24, 2313);
+    			add_location(th1, file$1, 101, 24, 2351);
+    			add_location(th2, file$1, 102, 24, 2388);
+    			add_location(th3, file$1, 103, 24, 2427);
+    			add_location(th4, file$1, 104, 24, 2466);
+    			add_location(th5, file$1, 105, 24, 2507);
+    			add_location(th6, file$1, 106, 24, 2549);
+    			add_location(tr, file$1, 99, 20, 2284);
+    			add_location(thead, file$1, 98, 16, 2256);
+    			add_location(tbody, file$1, 110, 16, 2647);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, thead, anchor);
@@ -19552,7 +19619,9 @@ var app = (function () {
     			append_dev(tr, th4);
     			append_dev(tr, t9);
     			append_dev(tr, th5);
-    			insert_dev(target, t11, anchor);
+    			append_dev(tr, t11);
+    			append_dev(tr, th6);
+    			insert_dev(target, t13, anchor);
     			insert_dev(target, tbody, anchor);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -19562,7 +19631,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*form, payments*/ 17) {
+    			if (dirty & /*editPayment, payments, form*/ 2081) {
     				each_value_1 = /*payments*/ ctx[0];
     				validate_each_argument(each_value_1);
     				let i;
@@ -19610,7 +19679,7 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(thead);
-    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(t13);
     			if (detaching) detach_dev(tbody);
     			destroy_each(each_blocks, detaching);
     		}
@@ -19620,14 +19689,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_21.name,
     		type: "slot",
-    		source: "(74:12) <Table>",
+    		source: "(98:12) <Table>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:8) <Col size="12">
+    // (97:8) <Col size="12">
     function create_default_slot_20(ctx) {
     	let table;
     	let current;
@@ -19651,7 +19720,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const table_changes = {};
 
-    			if (dirty & /*$$scope, payments, form*/ 33554449) {
+    			if (dirty & /*$$scope, payments, form*/ 268435489) {
     				table_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19675,14 +19744,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_20.name,
     		type: "slot",
-    		source: "(73:8) <Col size=\\\"12\\\">",
+    		source: "(97:8) <Col size=\\\"12\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (72:4) <Row>
+    // (96:4) <Row>
     function create_default_slot_19(ctx) {
     	let col;
     	let current;
@@ -19707,7 +19776,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const col_changes = {};
 
-    			if (dirty & /*$$scope, payments, form*/ 33554449) {
+    			if (dirty & /*$$scope, payments, form*/ 268435489) {
     				col_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19731,14 +19800,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_19.name,
     		type: "slot",
-    		source: "(72:4) <Row>",
+    		source: "(96:4) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (109:4) <Row>
+    // (136:4) <Row>
     function create_default_slot_18(ctx) {
     	let col;
     	let current;
@@ -19771,14 +19840,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_18.name,
     		type: "slot",
-    		source: "(109:4) <Row>",
+    		source: "(136:4) <Row>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (118:12) <Label for="input-student-id">
+    // (145:12) <Label for="input-student-id">
     function create_default_slot_17(ctx) {
     	let t;
 
@@ -19798,38 +19867,38 @@ var app = (function () {
     		block,
     		id: create_default_slot_17.name,
     		type: "slot",
-    		source: "(118:12) <Label for=\\\"input-student-id\\\">",
+    		source: "(145:12) <Label for=\\\"input-student-id\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:16) <DropdownToggle tag="div" class="d-inline-block">
+    // (148:16) <DropdownToggle tag="div" class="d-inline-block">
     function create_default_slot_16(ctx) {
     	let input;
     	let updating_value;
     	let current;
 
     	function input_value_binding(value) {
-    		/*input_value_binding*/ ctx[10](value);
+    		/*input_value_binding*/ ctx[13](value);
     	}
 
     	let input_props = {
     		id: "input-student-id",
     		type: "text",
-    		invalid: !/*form*/ ctx[4].student_id || !/*form*/ ctx[4].student_verified,
+    		invalid: !/*form*/ ctx[5].student_id || !/*form*/ ctx[5].student_verified,
     		feedback: "Masukkan NIS",
     		placeholder: "NIS"
     	};
 
-    	if (/*form*/ ctx[4].student_id !== void 0) {
-    		input_props.value = /*form*/ ctx[4].student_id;
+    	if (/*form*/ ctx[5].student_id !== void 0) {
+    		input_props.value = /*form*/ ctx[5].student_id;
     	}
 
     	input = new Input({ props: input_props, $$inline: true });
     	binding_callbacks.push(() => bind(input, 'value', input_value_binding));
-    	input.$on("keyup", /*getStudent*/ ctx[5]);
+    	input.$on("keyup", /*getStudent*/ ctx[6]);
 
     	const block = {
     		c: function create() {
@@ -19841,11 +19910,11 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			const input_changes = {};
-    			if (dirty & /*form*/ 16) input_changes.invalid = !/*form*/ ctx[4].student_id || !/*form*/ ctx[4].student_verified;
+    			if (dirty & /*form*/ 32) input_changes.invalid = !/*form*/ ctx[5].student_id || !/*form*/ ctx[5].student_verified;
 
-    			if (!updating_value && dirty & /*form*/ 16) {
+    			if (!updating_value && dirty & /*form*/ 32) {
     				updating_value = true;
-    				input_changes.value = /*form*/ ctx[4].student_id;
+    				input_changes.value = /*form*/ ctx[5].student_id;
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -19869,21 +19938,21 @@ var app = (function () {
     		block,
     		id: create_default_slot_16.name,
     		type: "slot",
-    		source: "(121:16) <DropdownToggle tag=\\\"div\\\" class=\\\"d-inline-block\\\">",
+    		source: "(148:16) <DropdownToggle tag=\\\"div\\\" class=\\\"d-inline-block\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (134:24) <DropdownItem on:click={() => selectStudent(student.student_id)}>
+    // (161:24) <DropdownItem on:click={() => selectStudent(student.student_id)}>
     function create_default_slot_15(ctx) {
     	let div;
-    	let t0_value = /*student*/ ctx[19].name + "";
+    	let t0_value = /*student*/ ctx[22].name + "";
     	let t0;
     	let t1;
     	let small;
-    	let t2_value = /*student*/ ctx[19].student_id + "";
+    	let t2_value = /*student*/ ctx[22].student_id + "";
     	let t2;
     	let t3;
 
@@ -19895,8 +19964,8 @@ var app = (function () {
     			small = element("small");
     			t2 = text(t2_value);
     			t3 = space();
-    			add_location(div, file$1, 134, 28, 3859);
-    			add_location(small, file$1, 135, 28, 3913);
+    			add_location(div, file$1, 161, 28, 4679);
+    			add_location(small, file$1, 162, 28, 4733);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -19907,8 +19976,8 @@ var app = (function () {
     			insert_dev(target, t3, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*student_lists*/ 2 && t0_value !== (t0_value = /*student*/ ctx[19].name + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*student_lists*/ 2 && t2_value !== (t2_value = /*student*/ ctx[19].student_id + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*student_lists*/ 2 && t0_value !== (t0_value = /*student*/ ctx[22].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*student_lists*/ 2 && t2_value !== (t2_value = /*student*/ ctx[22].student_id + "")) set_data_dev(t2, t2_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -19922,21 +19991,21 @@ var app = (function () {
     		block,
     		id: create_default_slot_15.name,
     		type: "slot",
-    		source: "(134:24) <DropdownItem on:click={() => selectStudent(student.student_id)}>",
+    		source: "(161:24) <DropdownItem on:click={() => selectStudent(student.student_id)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (133:20) {#each student_lists as student, i (i)}
+    // (160:20) {#each student_lists as student, i (i)}
     function create_each_block(key_1, ctx) {
     	let first;
     	let dropdownitem;
     	let current;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[11](/*student*/ ctx[19]);
+    		return /*click_handler*/ ctx[14](/*student*/ ctx[22]);
     	}
 
     	dropdownitem = new DropdownItem({
@@ -19966,7 +20035,7 @@ var app = (function () {
     			ctx = new_ctx;
     			const dropdownitem_changes = {};
 
-    			if (dirty & /*$$scope, student_lists*/ 33554434) {
+    			if (dirty & /*$$scope, student_lists*/ 268435458) {
     				dropdownitem_changes.$$scope = { dirty, ctx };
     			}
 
@@ -19991,14 +20060,14 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(133:20) {#each student_lists as student, i (i)}",
+    		source: "(160:20) {#each student_lists as student, i (i)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (132:16) <DropdownMenu>
+    // (159:16) <DropdownMenu>
     function create_default_slot_14(ctx) {
     	let each_blocks = [];
     	let each_1_lookup = new Map();
@@ -20006,7 +20075,7 @@ var app = (function () {
     	let current;
     	let each_value = /*student_lists*/ ctx[1];
     	validate_each_argument(each_value);
-    	const get_key = ctx => /*i*/ ctx[21];
+    	const get_key = ctx => /*i*/ ctx[24];
     	validate_each_keys(ctx, each_value, get_each_context, get_key);
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -20032,7 +20101,7 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*selectStudent, student_lists*/ 130) {
+    			if (dirty & /*selectStudent, student_lists*/ 258) {
     				each_value = /*student_lists*/ ctx[1];
     				validate_each_argument(each_value);
     				group_outros();
@@ -20070,14 +20139,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_14.name,
     		type: "slot",
-    		source: "(132:16) <DropdownMenu>",
+    		source: "(159:16) <DropdownMenu>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (120:12) <Dropdown {isOpen} toggle={() => isOpen = !isOpen}>
+    // (147:12) <Dropdown {isOpen} toggle={() => isOpen = !isOpen}>
     function create_default_slot_13(ctx) {
     	let dropdowntoggle;
     	let t;
@@ -20117,14 +20186,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const dropdowntoggle_changes = {};
 
-    			if (dirty & /*$$scope, form*/ 33554448) {
+    			if (dirty & /*$$scope, form*/ 268435488) {
     				dropdowntoggle_changes.$$scope = { dirty, ctx };
     			}
 
     			dropdowntoggle.$set(dropdowntoggle_changes);
     			const dropdownmenu_changes = {};
 
-    			if (dirty & /*$$scope, student_lists*/ 33554434) {
+    			if (dirty & /*$$scope, student_lists*/ 268435458) {
     				dropdownmenu_changes.$$scope = { dirty, ctx };
     			}
 
@@ -20152,14 +20221,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_13.name,
     		type: "slot",
-    		source: "(120:12) <Dropdown {isOpen} toggle={() => isOpen = !isOpen}>",
+    		source: "(147:12) <Dropdown {isOpen} toggle={() => isOpen = !isOpen}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (117:8) <FormGroup>
+    // (144:8) <FormGroup>
     function create_default_slot_12(ctx) {
     	let label;
     	let t;
@@ -20177,8 +20246,8 @@ var app = (function () {
 
     	dropdown = new Dropdown({
     			props: {
-    				isOpen: /*isOpen*/ ctx[2],
-    				toggle: /*func*/ ctx[12],
+    				isOpen: /*isOpen*/ ctx[3],
+    				toggle: /*func*/ ctx[15],
     				$$slots: { default: [create_default_slot_13] },
     				$$scope: { ctx }
     			},
@@ -20200,16 +20269,16 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
     			label.$set(label_changes);
     			const dropdown_changes = {};
-    			if (dirty & /*isOpen*/ 4) dropdown_changes.isOpen = /*isOpen*/ ctx[2];
-    			if (dirty & /*isOpen*/ 4) dropdown_changes.toggle = /*func*/ ctx[12];
+    			if (dirty & /*isOpen*/ 8) dropdown_changes.isOpen = /*isOpen*/ ctx[3];
+    			if (dirty & /*isOpen*/ 8) dropdown_changes.toggle = /*func*/ ctx[15];
 
-    			if (dirty & /*$$scope, student_lists, form*/ 33554450) {
+    			if (dirty & /*$$scope, student_lists, form*/ 268435490) {
     				dropdown_changes.$$scope = { dirty, ctx };
     			}
 
@@ -20237,14 +20306,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_12.name,
     		type: "slot",
-    		source: "(117:8) <FormGroup>",
+    		source: "(144:8) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (144:12) <Label for="input-tahun">
+    // (171:12) <Label for="input-tahun">
     function create_default_slot_11(ctx) {
     	let t;
 
@@ -20264,14 +20333,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_11.name,
     		type: "slot",
-    		source: "(144:12) <Label for=\\\"input-tahun\\\">",
+    		source: "(171:12) <Label for=\\\"input-tahun\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (145:12) <Input                 id="input-tahun"                 type="select"                 invalid={!form.year}                 bind:value={form.year}                 feedback="Pilih tahun"                 placeholder="Pilih tahun"             >
+    // (172:12) <Input                 id="input-tahun"                 type="select"                 invalid={!form.year}                 bind:value={form.year}                 feedback="Pilih tahun"                 placeholder="Pilih tahun"             >
     function create_default_slot_10(ctx) {
     	let option0;
     	let t1;
@@ -20294,18 +20363,18 @@ var app = (function () {
     			t5 = space();
     			option3 = element("option");
     			option3.textContent = "2021";
-    			option0.__value = "2018";
+    			option0.__value = 2018;
     			option0.value = option0.__value;
-    			add_location(option0, file$1, 152, 16, 4435);
-    			option1.__value = "2019";
+    			add_location(option0, file$1, 179, 16, 5255);
+    			option1.__value = 2019;
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 153, 16, 4473);
-    			option2.__value = "2020";
+    			add_location(option1, file$1, 180, 16, 5306);
+    			option2.__value = 2020;
     			option2.value = option2.__value;
-    			add_location(option2, file$1, 154, 16, 4511);
-    			option3.__value = "2021";
+    			add_location(option2, file$1, 181, 16, 5357);
+    			option3.__value = 2021;
     			option3.value = option3.__value;
-    			add_location(option3, file$1, 155, 16, 4549);
+    			add_location(option3, file$1, 182, 16, 5408);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option0, anchor);
@@ -20331,14 +20400,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_10.name,
     		type: "slot",
-    		source: "(145:12) <Input                 id=\\\"input-tahun\\\"                 type=\\\"select\\\"                 invalid={!form.year}                 bind:value={form.year}                 feedback=\\\"Pilih tahun\\\"                 placeholder=\\\"Pilih tahun\\\"             >",
+    		source: "(172:12) <Input                 id=\\\"input-tahun\\\"                 type=\\\"select\\\"                 invalid={!form.year}                 bind:value={form.year}                 feedback=\\\"Pilih tahun\\\"                 placeholder=\\\"Pilih tahun\\\"             >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (143:8) <FormGroup>
+    // (170:8) <FormGroup>
     function create_default_slot_9(ctx) {
     	let label;
     	let t;
@@ -20356,21 +20425,21 @@ var app = (function () {
     		});
 
     	function input_value_binding_1(value) {
-    		/*input_value_binding_1*/ ctx[13](value);
+    		/*input_value_binding_1*/ ctx[16](value);
     	}
 
     	let input_props = {
     		id: "input-tahun",
     		type: "select",
-    		invalid: !/*form*/ ctx[4].year,
+    		invalid: !/*form*/ ctx[5].year,
     		feedback: "Pilih tahun",
     		placeholder: "Pilih tahun",
     		$$slots: { default: [create_default_slot_10] },
     		$$scope: { ctx }
     	};
 
-    	if (/*form*/ ctx[4].year !== void 0) {
-    		input_props.value = /*form*/ ctx[4].year;
+    	if (/*form*/ ctx[5].year !== void 0) {
+    		input_props.value = /*form*/ ctx[5].year;
     	}
 
     	input = new Input({ props: input_props, $$inline: true });
@@ -20391,21 +20460,21 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
     			label.$set(label_changes);
     			const input_changes = {};
-    			if (dirty & /*form*/ 16) input_changes.invalid = !/*form*/ ctx[4].year;
+    			if (dirty & /*form*/ 32) input_changes.invalid = !/*form*/ ctx[5].year;
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				input_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_value && dirty & /*form*/ 16) {
+    			if (!updating_value && dirty & /*form*/ 32) {
     				updating_value = true;
-    				input_changes.value = /*form*/ ctx[4].year;
+    				input_changes.value = /*form*/ ctx[5].year;
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -20433,14 +20502,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_9.name,
     		type: "slot",
-    		source: "(143:8) <FormGroup>",
+    		source: "(170:8) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (161:12) <Label for="input-bulan">
+    // (188:12) <Label for="input-bulan">
     function create_default_slot_8(ctx) {
     	let t;
 
@@ -20460,14 +20529,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_8.name,
     		type: "slot",
-    		source: "(161:12) <Label for=\\\"input-bulan\\\">",
+    		source: "(188:12) <Label for=\\\"input-bulan\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (162:12) <Input                 id="input-bulan"                 type="select"                 invalid={!form.month}                 bind:value={form.month}                 feedback="Pilih bulan"                 placeholder="Pilih bulan"             >
+    // (189:12) <Input                 id="input-bulan"                 type="select"                 invalid={!form.month}                 bind:value={form.month}                 feedback="Pilih bulan"                 placeholder="Pilih bulan"             >
     function create_default_slot_7(ctx) {
     	let option0;
     	let t1;
@@ -20530,42 +20599,42 @@ var app = (function () {
     			t21 = space();
     			option11 = element("option");
     			option11.textContent = "Desember";
-    			option0.__value = "1";
+    			option0.__value = 1;
     			option0.value = option0.__value;
-    			add_location(option0, file$1, 169, 16, 4956);
-    			option1.__value = "2";
+    			add_location(option0, file$1, 196, 16, 5828);
+    			option1.__value = 2;
     			option1.value = option1.__value;
-    			add_location(option1, file$1, 170, 16, 5007);
-    			option2.__value = "3";
+    			add_location(option1, file$1, 197, 16, 5879);
+    			option2.__value = 3;
     			option2.value = option2.__value;
-    			add_location(option2, file$1, 171, 16, 5059);
-    			option3.__value = "4";
+    			add_location(option2, file$1, 198, 16, 5931);
+    			option3.__value = 4;
     			option3.value = option3.__value;
-    			add_location(option3, file$1, 172, 16, 5108);
-    			option4.__value = "5";
+    			add_location(option3, file$1, 199, 16, 5980);
+    			option4.__value = 5;
     			option4.value = option4.__value;
-    			add_location(option4, file$1, 173, 16, 5157);
-    			option5.__value = "6";
+    			add_location(option4, file$1, 200, 16, 6029);
+    			option5.__value = 6;
     			option5.value = option5.__value;
-    			add_location(option5, file$1, 174, 16, 5204);
-    			option6.__value = "7";
+    			add_location(option5, file$1, 201, 16, 6076);
+    			option6.__value = 7;
     			option6.value = option6.__value;
-    			add_location(option6, file$1, 175, 16, 5252);
-    			option7.__value = "8";
+    			add_location(option6, file$1, 202, 16, 6124);
+    			option7.__value = 8;
     			option7.value = option7.__value;
-    			add_location(option7, file$1, 176, 16, 5300);
-    			option8.__value = "9";
+    			add_location(option7, file$1, 203, 16, 6172);
+    			option8.__value = 9;
     			option8.value = option8.__value;
-    			add_location(option8, file$1, 177, 16, 5351);
-    			option9.__value = "10";
+    			add_location(option8, file$1, 204, 16, 6223);
+    			option9.__value = 10;
     			option9.value = option9.__value;
-    			add_location(option9, file$1, 178, 16, 5404);
-    			option10.__value = "11";
+    			add_location(option9, file$1, 205, 16, 6276);
+    			option10.__value = 11;
     			option10.value = option10.__value;
-    			add_location(option10, file$1, 179, 16, 5456);
-    			option11.__value = "12";
+    			add_location(option10, file$1, 206, 16, 6328);
+    			option11.__value = 12;
     			option11.value = option11.__value;
-    			add_location(option11, file$1, 180, 16, 5509);
+    			add_location(option11, file$1, 207, 16, 6381);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, option0, anchor);
@@ -20623,14 +20692,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_7.name,
     		type: "slot",
-    		source: "(162:12) <Input                 id=\\\"input-bulan\\\"                 type=\\\"select\\\"                 invalid={!form.month}                 bind:value={form.month}                 feedback=\\\"Pilih bulan\\\"                 placeholder=\\\"Pilih bulan\\\"             >",
+    		source: "(189:12) <Input                 id=\\\"input-bulan\\\"                 type=\\\"select\\\"                 invalid={!form.month}                 bind:value={form.month}                 feedback=\\\"Pilih bulan\\\"                 placeholder=\\\"Pilih bulan\\\"             >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (160:8) <FormGroup>
+    // (187:8) <FormGroup>
     function create_default_slot_6(ctx) {
     	let label;
     	let t;
@@ -20648,21 +20717,21 @@ var app = (function () {
     		});
 
     	function input_value_binding_2(value) {
-    		/*input_value_binding_2*/ ctx[14](value);
+    		/*input_value_binding_2*/ ctx[17](value);
     	}
 
     	let input_props = {
     		id: "input-bulan",
     		type: "select",
-    		invalid: !/*form*/ ctx[4].month,
+    		invalid: !/*form*/ ctx[5].month,
     		feedback: "Pilih bulan",
     		placeholder: "Pilih bulan",
     		$$slots: { default: [create_default_slot_7] },
     		$$scope: { ctx }
     	};
 
-    	if (/*form*/ ctx[4].month !== void 0) {
-    		input_props.value = /*form*/ ctx[4].month;
+    	if (/*form*/ ctx[5].month !== void 0) {
+    		input_props.value = /*form*/ ctx[5].month;
     	}
 
     	input = new Input({ props: input_props, $$inline: true });
@@ -20683,21 +20752,21 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
     			label.$set(label_changes);
     			const input_changes = {};
-    			if (dirty & /*form*/ 16) input_changes.invalid = !/*form*/ ctx[4].month;
+    			if (dirty & /*form*/ 32) input_changes.invalid = !/*form*/ ctx[5].month;
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				input_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_value && dirty & /*form*/ 16) {
+    			if (!updating_value && dirty & /*form*/ 32) {
     				updating_value = true;
-    				input_changes.value = /*form*/ ctx[4].month;
+    				input_changes.value = /*form*/ ctx[5].month;
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -20725,14 +20794,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_6.name,
     		type: "slot",
-    		source: "(160:8) <FormGroup>",
+    		source: "(187:8) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (186:12) <Label for="input-nominal">
+    // (213:12) <Label for="input-nominal">
     function create_default_slot_5(ctx) {
     	let t;
 
@@ -20752,14 +20821,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(186:12) <Label for=\\\"input-nominal\\\">",
+    		source: "(213:12) <Label for=\\\"input-nominal\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (185:8) <FormGroup>
+    // (212:8) <FormGroup>
     function create_default_slot_4(ctx) {
     	let label;
     	let t;
@@ -20777,19 +20846,19 @@ var app = (function () {
     		});
 
     	function input_value_binding_3(value) {
-    		/*input_value_binding_3*/ ctx[15](value);
+    		/*input_value_binding_3*/ ctx[18](value);
     	}
 
     	let input_props = {
     		id: "input-nominal",
     		type: "number",
-    		invalid: !/*form*/ ctx[4].nominal,
+    		invalid: !/*form*/ ctx[5].nominal,
     		feedback: "Masukan nominal",
     		placeholder: "Masukkan nominal"
     	};
 
-    	if (/*form*/ ctx[4].nominal !== void 0) {
-    		input_props.value = /*form*/ ctx[4].nominal;
+    	if (/*form*/ ctx[5].nominal !== void 0) {
+    		input_props.value = /*form*/ ctx[5].nominal;
     	}
 
     	input = new Input({ props: input_props, $$inline: true });
@@ -20810,17 +20879,17 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
     			label.$set(label_changes);
     			const input_changes = {};
-    			if (dirty & /*form*/ 16) input_changes.invalid = !/*form*/ ctx[4].nominal;
+    			if (dirty & /*form*/ 32) input_changes.invalid = !/*form*/ ctx[5].nominal;
 
-    			if (!updating_value && dirty & /*form*/ 16) {
+    			if (!updating_value && dirty & /*form*/ 32) {
     				updating_value = true;
-    				input_changes.value = /*form*/ ctx[4].nominal;
+    				input_changes.value = /*form*/ ctx[5].nominal;
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -20848,14 +20917,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(185:8) <FormGroup>",
+    		source: "(212:8) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (198:12) <Label for="input-paid">
+    // (225:12) <Label for="input-paid">
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -20875,14 +20944,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(198:12) <Label for=\\\"input-paid\\\">",
+    		source: "(225:12) <Label for=\\\"input-paid\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (197:8) <FormGroup>
+    // (224:8) <FormGroup>
     function create_default_slot_2$1(ctx) {
     	let label;
     	let t;
@@ -20900,13 +20969,13 @@ var app = (function () {
     		});
 
     	function input_value_binding_4(value) {
-    		/*input_value_binding_4*/ ctx[16](value);
+    		/*input_value_binding_4*/ ctx[19](value);
     	}
 
     	let input_props = { id: "input-paid", type: "checkbox" };
 
-    	if (/*form*/ ctx[4].paid !== void 0) {
-    		input_props.value = /*form*/ ctx[4].paid;
+    	if (/*form*/ ctx[5].paid !== void 0) {
+    		input_props.value = /*form*/ ctx[5].paid;
     	}
 
     	input = new Input({ props: input_props, $$inline: true });
@@ -20927,16 +20996,16 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const label_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				label_changes.$$scope = { dirty, ctx };
     			}
 
     			label.$set(label_changes);
     			const input_changes = {};
 
-    			if (!updating_value && dirty & /*form*/ 16) {
+    			if (!updating_value && dirty & /*form*/ 32) {
     				updating_value = true;
-    				input_changes.value = /*form*/ ctx[4].paid;
+    				input_changes.value = /*form*/ ctx[5].paid;
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -20964,14 +21033,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$1.name,
     		type: "slot",
-    		source: "(197:8) <FormGroup>",
+    		source: "(224:8) <FormGroup>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (206:8) <Button color="primary" disabled={!form.student_verified || !form.year || !form.month || !form.nominal} on:click={savePayment}>
+    // (233:8) <Button color="primary" disabled={!form.student_verified || !form.year || !form.month || !form.nominal} on:click={isEditing ? saveEdit : savePayment}>
     function create_default_slot_1$1(ctx) {
     	let t;
 
@@ -20991,14 +21060,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(206:8) <Button color=\\\"primary\\\" disabled={!form.student_verified || !form.year || !form.month || !form.nominal} on:click={savePayment}>",
+    		source: "(233:8) <Button color=\\\"primary\\\" disabled={!form.student_verified || !form.year || !form.month || !form.nominal} on:click={isEditing ? saveEdit : savePayment}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (116:4) <Modal body isOpen={openModal} toggle={toggleAddPayment} header="Tambah Pembayaran">
+    // (143:4) <Modal body isOpen={openModal} toggle={toggleAddPayment} header="Tambah Pembayaran">
     function create_default_slot$1(ctx) {
     	let formgroup0;
     	let t0;
@@ -21056,14 +21125,20 @@ var app = (function () {
     	button = new Button({
     			props: {
     				color: "primary",
-    				disabled: !/*form*/ ctx[4].student_verified || !/*form*/ ctx[4].year || !/*form*/ ctx[4].month || !/*form*/ ctx[4].nominal,
+    				disabled: !/*form*/ ctx[5].student_verified || !/*form*/ ctx[5].year || !/*form*/ ctx[5].month || !/*form*/ ctx[5].nominal,
     				$$slots: { default: [create_default_slot_1$1] },
     				$$scope: { ctx }
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", /*savePayment*/ ctx[8]);
+    	button.$on("click", function () {
+    		if (is_function(/*isEditing*/ ctx[2]
+    		? /*saveEdit*/ ctx[10]
+    		: /*savePayment*/ ctx[9])) (/*isEditing*/ ctx[2]
+    		? /*saveEdit*/ ctx[10]
+    		: /*savePayment*/ ctx[9]).apply(this, arguments);
+    	});
 
     	const block = {
     		c: function create() {
@@ -21093,46 +21168,47 @@ var app = (function () {
     			mount_component(button, target, anchor);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
     			const formgroup0_changes = {};
 
-    			if (dirty & /*$$scope, isOpen, student_lists, form*/ 33554454) {
+    			if (dirty & /*$$scope, isOpen, student_lists, form*/ 268435498) {
     				formgroup0_changes.$$scope = { dirty, ctx };
     			}
 
     			formgroup0.$set(formgroup0_changes);
     			const formgroup1_changes = {};
 
-    			if (dirty & /*$$scope, form*/ 33554448) {
+    			if (dirty & /*$$scope, form*/ 268435488) {
     				formgroup1_changes.$$scope = { dirty, ctx };
     			}
 
     			formgroup1.$set(formgroup1_changes);
     			const formgroup2_changes = {};
 
-    			if (dirty & /*$$scope, form*/ 33554448) {
+    			if (dirty & /*$$scope, form*/ 268435488) {
     				formgroup2_changes.$$scope = { dirty, ctx };
     			}
 
     			formgroup2.$set(formgroup2_changes);
     			const formgroup3_changes = {};
 
-    			if (dirty & /*$$scope, form*/ 33554448) {
+    			if (dirty & /*$$scope, form*/ 268435488) {
     				formgroup3_changes.$$scope = { dirty, ctx };
     			}
 
     			formgroup3.$set(formgroup3_changes);
     			const formgroup4_changes = {};
 
-    			if (dirty & /*$$scope, form*/ 33554448) {
+    			if (dirty & /*$$scope, form*/ 268435488) {
     				formgroup4_changes.$$scope = { dirty, ctx };
     			}
 
     			formgroup4.$set(formgroup4_changes);
     			const button_changes = {};
-    			if (dirty & /*form*/ 16) button_changes.disabled = !/*form*/ ctx[4].student_verified || !/*form*/ ctx[4].year || !/*form*/ ctx[4].month || !/*form*/ ctx[4].nominal;
+    			if (dirty & /*form*/ 32) button_changes.disabled = !/*form*/ ctx[5].student_verified || !/*form*/ ctx[5].year || !/*form*/ ctx[5].month || !/*form*/ ctx[5].nominal;
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -21176,7 +21252,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(116:4) <Modal body isOpen={openModal} toggle={toggleAddPayment} header=\\\"Tambah Pembayaran\\\">",
+    		source: "(143:4) <Modal body isOpen={openModal} toggle={toggleAddPayment} header=\\\"Tambah Pembayaran\\\">",
     		ctx
     	});
 
@@ -21197,7 +21273,7 @@ var app = (function () {
     	row0 = new Row({
     			props: {
     				class: "mt-3",
-    				$$slots: { default: [create_default_slot_22] },
+    				$$slots: { default: [create_default_slot_23] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -21222,8 +21298,8 @@ var app = (function () {
     	modal = new Modal({
     			props: {
     				body: true,
-    				isOpen: /*openModal*/ ctx[3],
-    				toggle: /*toggleAddPayment*/ ctx[6],
+    				isOpen: /*openModal*/ ctx[4],
+    				toggle: /*toggleAddPayment*/ ctx[7],
     				header: "Tambah Pembayaran",
     				$$slots: { default: [create_default_slot$1] },
     				$$scope: { ctx }
@@ -21241,7 +21317,7 @@ var app = (function () {
     			create_component(row2.$$.fragment);
     			t2 = space();
     			create_component(modal.$$.fragment);
-    			add_location(main, file$1, 64, 0, 1432);
+    			add_location(main, file$1, 88, 0, 2014);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -21260,29 +21336,29 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			const row0_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				row0_changes.$$scope = { dirty, ctx };
     			}
 
     			row0.$set(row0_changes);
     			const row1_changes = {};
 
-    			if (dirty & /*$$scope, payments, form*/ 33554449) {
+    			if (dirty & /*$$scope, payments, form*/ 268435489) {
     				row1_changes.$$scope = { dirty, ctx };
     			}
 
     			row1.$set(row1_changes);
     			const row2_changes = {};
 
-    			if (dirty & /*$$scope*/ 33554432) {
+    			if (dirty & /*$$scope*/ 268435456) {
     				row2_changes.$$scope = { dirty, ctx };
     			}
 
     			row2.$set(row2_changes);
     			const modal_changes = {};
-    			if (dirty & /*openModal*/ 8) modal_changes.isOpen = /*openModal*/ ctx[3];
+    			if (dirty & /*openModal*/ 16) modal_changes.isOpen = /*openModal*/ ctx[4];
 
-    			if (dirty & /*$$scope, form, isOpen, student_lists*/ 33554454) {
+    			if (dirty & /*$$scope, form, isEditing, isOpen, student_lists*/ 268435502) {
     				modal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -21328,6 +21404,7 @@ var app = (function () {
     	validate_slots('Payment', slots, []);
     	let payments = [];
     	let student_lists = [];
+    	let isEditing = false;
     	let isOpen = false;
     	let openModal = false;
 
@@ -21349,20 +21426,20 @@ var app = (function () {
     	};
 
     	const getStudent = () => {
-    		$$invalidate(4, form.student_verified = false, form);
+    		$$invalidate(5, form.student_verified = false, form);
     		$$invalidate(1, student_lists = window.API.student.find(form.student_id));
     	};
 
     	const resetForm = () => {
-    		$$invalidate(4, form.student_id = null, form);
-    		$$invalidate(4, form.year = null, form);
-    		$$invalidate(4, form.month = null, form);
-    		$$invalidate(4, form.nominal = null, form);
-    		$$invalidate(4, form.paid = false, form);
+    		$$invalidate(5, form.student_id = null, form);
+    		$$invalidate(5, form.year = null, form);
+    		$$invalidate(5, form.month = null, form);
+    		$$invalidate(5, form.nominal = null, form);
+    		$$invalidate(5, form.paid = false, form);
     	};
 
     	const toggleAddPayment = () => {
-    		$$invalidate(3, openModal = !openModal);
+    		$$invalidate(4, openModal = !openModal);
 
     		if (!openModal) {
     			resetForm();
@@ -21370,8 +21447,8 @@ var app = (function () {
     	};
 
     	const selectStudent = student_id => {
-    		$$invalidate(4, form.student_id = student_id, form);
-    		$$invalidate(4, form.student_verified = true, form);
+    		$$invalidate(5, form.student_id = student_id, form);
+    		$$invalidate(5, form.student_verified = true, form);
     	};
 
     	const savePayment = () => {
@@ -21385,6 +21462,29 @@ var app = (function () {
     		}
     	};
 
+    	const saveEdit = () => {
+    		const { status, message } = window.API.payment.edit(form);
+
+    		if (status) {
+    			getPayment();
+    			$$invalidate(2, isEditing = false);
+    			toggleAddPayment();
+    		} else {
+    			alert(message);
+    		}
+    	};
+
+    	const editPayment = data => {
+    		$$invalidate(2, isEditing = true);
+    		$$invalidate(5, form.id = data.id, form);
+    		$$invalidate(5, form.student_id = data.student_id, form);
+    		$$invalidate(5, form.year = data.year, form);
+    		$$invalidate(5, form.month = data.month, form);
+    		$$invalidate(5, form.nominal = data.nominal, form);
+    		$$invalidate(5, form.paid = data.paid, form);
+    		toggleAddPayment();
+    	};
+
     	getPayment();
     	const writable_props = [];
 
@@ -21395,45 +21495,45 @@ var app = (function () {
     	function input_checked_binding(value) {
     		if ($$self.$$.not_equal(form.paid, value)) {
     			form.paid = value;
-    			$$invalidate(4, form);
+    			$$invalidate(5, form);
     		}
     	}
 
     	function input_value_binding(value) {
     		if ($$self.$$.not_equal(form.student_id, value)) {
     			form.student_id = value;
-    			$$invalidate(4, form);
+    			$$invalidate(5, form);
     		}
     	}
 
     	const click_handler = student => selectStudent(student.student_id);
-    	const func = () => $$invalidate(2, isOpen = !isOpen);
+    	const func = () => $$invalidate(3, isOpen = !isOpen);
 
     	function input_value_binding_1(value) {
     		if ($$self.$$.not_equal(form.year, value)) {
     			form.year = value;
-    			$$invalidate(4, form);
+    			$$invalidate(5, form);
     		}
     	}
 
     	function input_value_binding_2(value) {
     		if ($$self.$$.not_equal(form.month, value)) {
     			form.month = value;
-    			$$invalidate(4, form);
+    			$$invalidate(5, form);
     		}
     	}
 
     	function input_value_binding_3(value) {
     		if ($$self.$$.not_equal(form.nominal, value)) {
     			form.nominal = value;
-    			$$invalidate(4, form);
+    			$$invalidate(5, form);
     		}
     	}
 
     	function input_value_binding_4(value) {
     		if ($$self.$$.not_equal(form.paid, value)) {
     			form.paid = value;
-    			$$invalidate(4, form);
+    			$$invalidate(5, form);
     		}
     	}
 
@@ -21452,6 +21552,7 @@ var app = (function () {
     		Label,
     		payments,
     		student_lists,
+    		isEditing,
     		isOpen,
     		openModal,
     		form,
@@ -21460,15 +21561,18 @@ var app = (function () {
     		resetForm,
     		toggleAddPayment,
     		selectStudent,
-    		savePayment
+    		savePayment,
+    		saveEdit,
+    		editPayment
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('payments' in $$props) $$invalidate(0, payments = $$props.payments);
     		if ('student_lists' in $$props) $$invalidate(1, student_lists = $$props.student_lists);
-    		if ('isOpen' in $$props) $$invalidate(2, isOpen = $$props.isOpen);
-    		if ('openModal' in $$props) $$invalidate(3, openModal = $$props.openModal);
-    		if ('form' in $$props) $$invalidate(4, form = $$props.form);
+    		if ('isEditing' in $$props) $$invalidate(2, isEditing = $$props.isEditing);
+    		if ('isOpen' in $$props) $$invalidate(3, isOpen = $$props.isOpen);
+    		if ('openModal' in $$props) $$invalidate(4, openModal = $$props.openModal);
+    		if ('form' in $$props) $$invalidate(5, form = $$props.form);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -21478,6 +21582,7 @@ var app = (function () {
     	return [
     		payments,
     		student_lists,
+    		isEditing,
     		isOpen,
     		openModal,
     		form,
@@ -21485,6 +21590,8 @@ var app = (function () {
     		toggleAddPayment,
     		selectStudent,
     		savePayment,
+    		saveEdit,
+    		editPayment,
     		input_checked_binding,
     		input_value_binding,
     		click_handler,

@@ -44,6 +44,21 @@ function addPayment({ student_id, year, month, nominal, paid }) {
     return { status: true, data: null }
 }
 
+function editPayment({ id, student_id, year, month, nominal, paid }) {
+    const payment = payments.find(v => v.id === id)
+
+    if (!payment) {
+        return { status: false, message: 'Pembayaran tidak ditemukan' }
+    }
+
+    payment.year = year
+    payment.month = month
+    payment.nominal = nominal
+    payment.paid = paid
+
+    return { status: true, data: null }
+}
+
 function findPayment({ find }) {
     return { status: true, data: payments }
 }
@@ -74,4 +89,5 @@ module.exports = {
     setPaid,
     deletePayment,
     findPayment,
+    editPayment,
 }
