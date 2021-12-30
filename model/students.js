@@ -1,5 +1,16 @@
 let index = 1
-const students = []
+const students = [
+    {
+        id: 1,
+        name: 'Wasdasd',
+        student_id: '0120312',
+    },
+    {
+        id: 2,
+        name: 'Assdasd',
+        student_id: '0120313',
+    },
+]
 
 function addStudent({ name, student_id }) {
     students.push({ name: String(name), student_id: String(student_id), id: ++index })

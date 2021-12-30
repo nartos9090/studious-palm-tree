@@ -1,5 +1,6 @@
 const { contextBridge, ipcRenderer } = require('electron')
-const db_students = require('../db/students')
+const db_students = require('../model/students')
+const db_payments = require('../model/payments')
 
 contextBridge.exposeInMainWorld('API', {
     helloDialog: () => ipcRenderer.send('hello'),
@@ -8,5 +9,9 @@ contextBridge.exposeInMainWorld('API', {
         edit: db_students.editStudent,
         delete: db_students.deleteStudent,
         find: db_students.findStudent,
+    },
+    payment: {
+        find: db_payments.findPayment,
+        add: db_payments.addPayment,
     }
 })

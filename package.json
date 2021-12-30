@@ -51,6 +51,7 @@
     "concurrently": "^6.2.2",
     "electron-reload": "*",
     "electron-squirrel-startup": "^1.0.0",
+    "mysql": "^2.18.1",
     "sirv-cli": "^1.0.0"
   },
   "devDependencies": {

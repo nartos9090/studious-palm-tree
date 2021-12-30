@@ -1,6 +1,7 @@
 <script>
 	import { Button, Table, FormCheck, Modal, TabContent, TabPane } from 'sveltestrap'
 	import Student from './Component/Student.svelte'
+	import Payment from './Component/Payment.svelte'
 
 	let datas = [
 		{
@@ -83,7 +84,7 @@
 		</TabPane>
 
 		<TabPane tabId="payment" tab="Pembayaran">
-			
+			<Payment />
 		</TabPane>
 	</TabContent>
 </main>
